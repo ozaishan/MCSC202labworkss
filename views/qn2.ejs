@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Newton-Raphson Method - Question 2</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <style>
+        body {
+            background: url('img/mcsc.png') no-repeat;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            margin-top: 50px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .results {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        form {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Newton-Raphson Method - Question 2</h1>
+        
+        <div class="results">
+            <h3>Implement the Newton-Raphson method to approximate the root of the equation e^x -4x by taking the initial guess x0=1.0</h3>
+            
+            <h2>Iterations:</h2>
+            <table>
+                <tr>
+                    <th>Iteration</th>
+                    <th>x</th>
+                    <th>f(x)</th>
+                    <th>f'(x)</th>
+                </tr>
+                <% for (let i = 0; i < iterations.length; i++) { %>
+                    <tr>
+                        <td><%= iterations[i].iteration %></td>
+                        <td><%= iterations[i].x %></td>
+                        <td><%= iterations[i].fx %></td>
+                        <td><%= iterations[i].fprimeX %></td>
+                    </tr>
+                <% } %>
+            </table>
+            
+            <% if (root !== null) { %>
+                <h2>Root:</h2>
+                <p>The estimated root is: <%= root.toFixed(4) %> </p>
+            <% } else { %>
+                <h2>Root:</h2>
+                <p>No root found within the specified tolerance.</p>
+            <% } %>
+        </div>
+
+        <form action="/" method="get">
+            <input type="submit" value="Back to Home" />
+        </form>
+    </div>
+</body>
+</html>
